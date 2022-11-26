@@ -1,6 +1,22 @@
 import React, {useState} from 'react'
+import './weatherApp.css'
+import styled from 'styled-components'
 import DisplayNumber from './layout/DisplayNumber'
 import WeatherForm from './layout/WeatherForm'
+
+
+const Boton = styled.button`
+    width: 100%;
+    background-color: blue;
+    color: white;
+    margin-top: 1rem;
+`
+
+const Input = styled.input`
+    border: solid gray 1px;
+    backgraund-color: lightgrey;
+    color: black;
+`
 
 const WeatherApp = () => {
     const [temperature, setTemperature] = useState(null)
@@ -20,8 +36,8 @@ const WeatherApp = () => {
     <div>
         <h2>WeatherApp</h2>
         <form onSubmit={queryTemperature}>
-            <input type="text" placeholder="Digite la ciudad" id="city"/>
-            <button className='submit'>Enviar</button>
+            <Input type="text" placeholder="Digite la ciudad" id="city"/>
+            <Boton className='submit'>Enviar</Boton>
         </form>
 
         {/* operador ternario *********************/}
