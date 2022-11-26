@@ -9,7 +9,7 @@ const CounterApp = () => {
         setDisplay(display-1)
     }
     function reset(){
-        setDisplay(display-display)
+        setDisplay((display)-(display))
     }
     function increment(){
         setDisplay(display+1)
@@ -18,7 +18,7 @@ const CounterApp = () => {
     <div>
         <h2 className="text-5xl">CounterApp</h2>
         <DisplayNumber>{display}</DisplayNumber>
-        <Boton funcion={decrement}> - </Boton>
+        <Boton funcion={decrement} className="ml-4"> - </Boton>
         <Boton fucion={reset}>Reset</Boton>
         <Boton funcion={increment}> + </Boton>
     </div>
