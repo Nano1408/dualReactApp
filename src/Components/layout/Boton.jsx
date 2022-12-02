@@ -4,10 +4,10 @@ const Boton = ({children, funcion}) => {
   return (
     <button className="px-4
                        py-1
-                     bg-lime-800 border 
+                      bg-amber-700 border-none 
                        text-white
                        rounded-lg
-                       ml-1"
+                       ml-2"
      onClick={funcion}>{children}</button>
   )
 }

@@ -1,6 +1,13 @@
+body{
+  background: #2a2a2afe;
+}
 h1{
   text-align: center;
+  font-size: 3.2rem !important;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold !important;
+  color: #fff;
+  margin-bottom: 2rem !important;
 }
 .container{
   display: flex;
@@ -11,6 +18,131 @@ h1{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
-input, .submit{
-  display: block;
+.weather{
+  width: 500px;
+  background-color: #03071E;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.h2WeatherTittle{
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+.descripcion{
+  color: #fff;
+  font-size: 25px;
+  margin-top: 10%;
+  margin-bottom: -15%;
+  font-weight: bold;
+}
+h2.nombre{
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  color: #fff;
+  font-weight: bold;
+}
+.container--data{
+  display: flex;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: #E85D04;
+  padding-left: 50px;
+  border-radius: 8px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+form{
+  display: flex;
+  margin-left: 8%;
+  margin-top: 20px;
+}
+form input{
+  width: 60%;
+  border-radius: 8px;
+  color: #555555;
+  padding-left: 20px;
+  overflow-x: scroll;
+}
+form input:focus{
+  color: #555555;
+}
+form input::placeholder{
+  color: #5b5b5b;
+}
+.data--clima{
+  color: #ffffff;
+  font-size: 30px;
+  text-align: left;
+}
+/* boton styles */
+.bx-search-alt-2{
+  font-size: 30px;
+  line-height: 1;
+  padding-top: 5px;
+}
+button.submit {
+  width: auto;
+  padding: 0em 1.8em;
+  margin: 0;
+  margin-left: 15px;
+  border: 2px solid #17C3B2;
+  border-radius: 7px;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #17C3B2;
+ }
+ button.submit::before{
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #17C3B2;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+ button.submit:hover::before {
+  width: 105%;
+ }
+ 
+ button.submit:hover {
+  color: #111;
+ }
+ /* estilos CounterApp */
+ .containerCounter{
+  width: 400px;
+   background: #03071E;
+   border-radius: 8px;
+ }
+ .h2Counter{
+   color: #fff;
+   font-weight: bold;
+   font-size: 2.5rem;
+   text-align: center;
+ }
+ .bx-down-arrow, .bx-reset, .bx-up-arrow {
+   font-size: 24px;
+   vertical-align: middle;
+ }
+ .countButton{
+   margin-bottom: 20px;
+ }
+ .display{
+   color: #fff;
+ }
+ /* .buttonCounter{
+   
+ } */

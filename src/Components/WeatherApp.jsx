@@ -19,25 +19,34 @@ const Input = styled.input`
 `
 
 const WeatherApp = () => {
-    const [temperature, setTemperature] = useState(null)
+    const [datos, setTemperature] = useState(null)
 
     function queryTemperature(e){
         e.preventDefault()
         const city = e.target.city.value;
-        const apiKey = 'bc53faa5060d584972f87db576cdc060'
-        const units = '&units=metric'
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}${units}`
+        const apiKey = 'bc53faa5060d584972f87db576cdc060&units=metric'
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&lang=es`
         fetch(url)
         .then(response => response.json())
-        .then(weather => setTemperature(weather.main.temp))
+        .then(weather => setTemperature({
+            temperatura: weather.main.temp,
+            humedad: weather.main.humidity,
+            viento: weather.wind.speed,
+            nombre: weather.name,
+            icono: weather.weather[0].icon,
+            descripcion: weather.weather[0].description, 
+        }))
+        console.log(url)
     }
-    console.log(temperature)
   return (
-    <div>
-        <h2>WeatherApp</h2>
+    <div className="weather text-center">
+        <h2 className="h2WeatherTittle">Weather App</h2>
         <form onSubmit={queryTemperature}>
-            <Input type="text" placeholder="Digite la ciudad" id="city"/>
-            <Boton className='submit'>Enviar</Boton>
+            <Input 
+            type="text" 
+            placeholder="Clima ciudad..." 
+            id="city"/>
+            <Boton className='submit'><i class='bx bx-search-alt-2' ></i></Boton>
         </form>
 
         {/* operador ternario *********************/}
@@ -47,7 +56,18 @@ const WeatherApp = () => {
         } */}
 
         {/* {operador de corto circuito} */}
-        {temperature !== null && <div><h2>{temperature}</h2></div>}
+        {datos !== null && <div><h2 className="nombre">{datos.nombre}</h2></div>}
+        <div className='container--data'>
+            <div className="data--clima">
+                {datos !== null && <div><h3 className="temperatura">{datos.temperatura}ºC</h3></div>}
+                {datos !== null && <div><h3 className="humedad">Humedad: {datos.humedad}%</h3></div>}
+                {datos !== null && <div><h3><i class='bx bx-wind bx-tada bx-rotate-90' ></i> {datos.viento} m/s</h3></div>}
+            </div>
+            <div className="IconDescription">
+            {datos !== null && <div className="descripcion"><h3>{datos.descripcion}</h3></div>}
+            {datos !== null && <img src={`http://openweathermap.org/img/wn/${datos.icono}@4x.png`}/>}
+            </div>
+        </div>
     </div>
   )
 }
