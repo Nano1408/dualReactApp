@@ -19,7 +19,7 @@ h1{
   font-weight: bold;
 }
 .weather{
-  width: 500px;
+  width: 540px;
   background-color: #03071E;
   border-radius: 8px;
   padding: 20px;
@@ -30,6 +30,9 @@ h1{
   font-weight: bold;
   color: #fff;
 }
+/* .IconDescription{
+  padding-right: 5px;
+} */
 .descripcion{
   color: #fff;
   font-size: 25px;
@@ -50,7 +53,8 @@ h2.nombre{
   justify-content: center;
   align-items: center;
   background-color: #E85D04;
-  padding-left: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-radius: 8px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -74,6 +78,7 @@ form input::placeholder{
 }
 .data--clima{
   color: #ffffff;
+  padding-right: 30px;
   font-size: 30px;
   text-align: left;
 }
@@ -124,6 +129,7 @@ button.submit {
  /* estilos CounterApp */
  .containerCounter{
   width: 400px;
+  height: 300px;
    background: #03071E;
    border-radius: 8px;
  }
@@ -143,6 +149,22 @@ button.submit {
  .display{
    color: #fff;
  }
- /* .buttonCounter{
-   
- } */
+@media (max-width:1024px) {
+  .containerCounter{
+    margin-left: 15%;
+    margin-right: 5%;
+  }
+}
+@media (max-width:900px) {
+  .containerCounter, .weather{
+    margin: 0 auto;
+    margin-top: 2%;
+  }
+  .containerCounter {
+    width: 540px;
+  }
+  .container{
+    display: block;
+    justify-content: center;
+  }
+}
