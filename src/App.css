@@ -168,3 +168,11 @@ button.submit {
     justify-content: center;
   }
 }
+@media screen and (max-width:700px) {
+  .containerCounter {
+    width: 300px;
+}
+.weather {
+  width: 380px;
+} 
+}
